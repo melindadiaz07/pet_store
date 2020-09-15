@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   root :to  => 'static#home'
   get "pets", to: "pets#index"
-  
+  get "/pets/:id", to: "pets#details", as: "pet"
 
+  get "/dogs", to: "pets#dogs"
+  get "/cats", to: "pets#cats"
+  get "/birds", to: "pets#birds"
+  
 end

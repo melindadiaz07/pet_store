@@ -269,3 +269,1209 @@ Processing by PetsController#index as HTML
 Completed 200 OK in 73ms (Views: 60.7ms | ActiveRecord: 0.9ms | Allocations: 9322)
 
 
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.9ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pluto"], ["species", "Dog"], ["year_of_birth", 2020], ["good_with_kids", 1], ["created_at", "2020-09-15 18:32:28.613844"], ["updated_at", "2020-09-15 18:32:28.613844"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Nugget"], ["species", "Dog"], ["year_of_birth", 2019], ["good_with_kids", 1], ["created_at", "2020-09-15 18:32:28.621158"], ["updated_at", "2020-09-15 18:32:28.621158"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Max"], ["species", "Dog"], ["year_of_birth", 2020], ["good_with_kids", 0], ["created_at", "2020-09-15 18:32:28.625544"], ["updated_at", "2020-09-15 18:32:28.625544"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.8ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Spot"], ["species", "Dog"], ["year_of_birth", 2018], ["good_with_kids", 0], ["created_at", "2020-09-15 18:32:28.631481"], ["updated_at", "2020-09-15 18:32:28.631481"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Barkley"], ["species", "Dog"], ["year_of_birth", 2017], ["good_with_kids", 1], ["created_at", "2020-09-15 18:32:28.637914"], ["updated_at", "2020-09-15 18:32:28.637914"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Whiskers"], ["species", "Cat"], ["year_of_birth", 2019], ["good_with_kids", 0], ["created_at", "2020-09-15 18:32:28.654385"], ["updated_at", "2020-09-15 18:32:28.654385"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Penny"], ["species", "Cat"], ["year_of_birth", 2015], ["good_with_kids", 0], ["created_at", "2020-09-15 18:32:28.658353"], ["updated_at", "2020-09-15 18:32:28.658353"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Franklin"], ["species", "Cat"], ["year_of_birth", 2018], ["good_with_kids", 1], ["created_at", "2020-09-15 18:32:28.661694"], ["updated_at", "2020-09-15 18:32:28.661694"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Polly"], ["species", "Bird"], ["year_of_birth", 2010], ["good_with_kids", 1], ["created_at", "2020-09-15 18:32:28.665351"], ["updated_at", "2020-09-15 18:32:28.665351"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/pets" for ::1 at 2020-09-15 14:32:51 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 6220)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 87ms (Views: 74.4ms | ActiveRecord: 0.8ms | Allocations: 25599)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 14:34:38 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 868)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 6145)
+
+
+Started GET "/routes" for ::1 at 2020-09-15 14:36:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/routes" for ::1 at 2020-09-15 14:40:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/pets" for ::1 at 2020-09-15 14:45:10 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 5978)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 22.3ms | ActiveRecord: 1.2ms | Allocations: 11594)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 14:45:13 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 968)
+
+
+  
+NoMethodError (undefined method `params' for nil:NilClass):
+  
+app/controllers/pets_controller.rb:8:in `details'
+Started GET "/pets" for ::1 at 2020-09-15 14:45:16 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 962)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 5315)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 14:45:18 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 956)
+
+
+  
+NoMethodError (undefined method `params' for nil:NilClass):
+  
+app/controllers/pets_controller.rb:8:in `details'
+Started GET "/pets" for ::1 at 2020-09-15 14:45:52 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 5785)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 1.6ms | Allocations: 10577)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 14:45:54 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+Completed 406 Not Acceptable in 9ms (ActiveRecord: 0.5ms | Allocations: 2918)
+
+
+  
+ActionController::MissingExactTemplate (PetsController#details is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/pets" for ::1 at 2020-09-15 14:52:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1118)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.7ms | Allocations: 6391)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 14:52:58 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1433)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms | Allocations: 2554)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    3: # age : actual age
+    4: # good with children : either "prefers a home without children" or "good with children"
+    5: 
+    6: <h3><% "#{@pet.name} the #{@pet.species}" %></h3>
+    7: 
+    8: 
+    9: # <h1><%= @taco.display_name %></h1>
+  
+app/views/pets/details.html.erb:6
+Started GET "/pets/1" for ::1 at 2020-09-15 14:54:00 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1444)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 3143)
+
+
+  
+ActionView::Template::Error (undefined method `display_name' for nil:NilClass):
+     6: <h3><% "#{@pets.name} the #{@pets.species}" %></h3>
+     7: 
+     8: 
+     9: # <h1><%= @taco.display_name %></h1>
+    10: 
+    11: # <div>Price: <%= @taco.display_price %></div>
+    12: # <div>Vegetarian? <%= @taco.display_veg %></div>
+  
+app/views/pets/details.html.erb:9
+Started GET "/pets/1" for ::1 at 2020-09-15 14:54:29 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 112)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 5921)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 14:55:18 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.4ms | Allocations: 112)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 5910)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 14:55:21 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1091)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 5569)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 14:55:23 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 4887)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 14:55:35 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.4ms | Allocations: 107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 5900)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 14:56:08 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1092)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 6353)
+
+
+Started GET "/pets/4" for ::1 at 2020-09-15 14:56:09 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.5ms | Allocations: 107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 5119)
+
+
+Started GET "/pets/5" for ::1 at 2020-09-15 14:56:15 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 4886)
+
+
+Started GET "/pets/6" for ::1 at 2020-09-15 14:56:19 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 4877)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 14:56:28 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.3ms | Allocations: 4891)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 14:59:10 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1825)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 3526)
+
+
+  
+ActionView::Template::Error (undefined method `now' for Date:Class
+Did you mean?  new):
+    1: 
+    2: <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+    3: <h3>Age: <%= Date.now.month %></h3>
+    4: 
+    5: 
+    6: # <h1><%= @taco.display_name %></h1>
+  
+app/views/pets/details.html.erb:3
+Started GET "/pets/2" for ::1 at 2020-09-15 14:59:22 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1800)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 3500)
+
+
+  
+ActionView::Template::Error (undefined method `month' for Date:Class):
+    1: 
+    2: <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+    3: <h3>Age: <%= Date.month %></h3>
+    4: 
+    5: 
+    6: # <h1><%= @taco.display_name %></h1>
+  
+app/views/pets/details.html.erb:3
+Started GET "/pets/2" for ::1 at 2020-09-15 14:59:40 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1809)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 3509)
+
+
+  
+ActionView::Template::Error (undefined method `month' for DateTime:Class):
+    1: 
+    2: <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+    3: <h3>Age: <%= DateTime.month %></h3>
+    4: 
+    5: 
+    6: # <h1><%= @taco.display_name %></h1>
+  
+app/views/pets/details.html.erb:3
+Started GET "/pets/2" for ::1 at 2020-09-15 15:00:02 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1804)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 3504)
+
+
+  
+ActionView::Template::Error (undefined method `month' for DateTime:Class):
+    1: 
+    2: <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+    3: <h3><%= DateTime.month %></h3>
+    4: 
+    5: 
+    6: # <h1><%= @taco.display_name %></h1>
+  
+app/views/pets/details.html.erb:3
+Started GET "/pets/2" for ::1 at 2020-09-15 15:00:36 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1454)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 3154)
+
+
+  
+ActionView::Template::Error (undefined method `display_name' for nil:NilClass):
+    3: <h3>Age: <%= DateTime %></h3>
+    4: 
+    5: 
+    6: # <h1><%= @taco.display_name %></h1>
+    7: 
+    8: # <div>Price: <%= @taco.display_price %></div>
+    9: # <div>Vegetarian? <%= @taco.display_veg %></div>
+  
+app/views/pets/details.html.erb:6
+Started GET "/pets/2" for ::1 at 2020-09-15 15:00:48 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.4ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 5920)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:00:56 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 3.9ms | Allocations: 124)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 5919)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:01:12 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 4890)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:01:20 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1742)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 3436)
+
+
+  
+ActionView::Template::Error (undefined method `month' for Date:Class):
+    1: 
+    2: <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+    3: <h3>Age: <%= Date.month %></h3>
+  
+app/views/pets/details.html.erb:3
+Started GET "/pets/2" for ::1 at 2020-09-15 15:01:27 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.3ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 5918)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:01:40 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 13)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 4883)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:01:43 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.0ms | Allocations: 128)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 5924)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:02:51 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.4ms | Allocations: 125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 5922)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:03:02 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1091)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.2ms | Allocations: 5581)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 15:03:03 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 4888)
+
+
+Started GET "/pets/3" for ::1 at 2020-09-15 15:03:06 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 4886)
+
+
+Started GET "/pets/4" for ::1 at 2020-09-15 15:03:08 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.2ms | Allocations: 14)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 4895)
+
+
+Started GET "/pets/4" for ::1 at 2020-09-15 15:07:06 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.5ms | Allocations: 152)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 10.4ms | ActiveRecord: 1.0ms | Allocations: 11271)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:07:13 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1113)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 5593)
+
+
+Started GET "/pets/7" for ::1 at 2020-09-15 15:07:14 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 17)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.3ms | Allocations: 4891)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:07:17 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.2ms | Allocations: 17)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 4887)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 15:07:20 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 4889)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:08:38 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1091)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.1ms | Allocations: 6357)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 15:08:39 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.6ms | Allocations: 191)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 5202)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:08:40 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 951)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 5295)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:08:41 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 4928)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:08:42 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.3ms | Allocations: 5293)
+
+
+Started GET "/pets/7" for ::1 at 2020-09-15 15:08:42 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.4ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.3ms | Allocations: 4924)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:08:43 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 5294)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:13:45 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 5782)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.7ms | Allocations: 10573)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 15:13:46 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.5ms | Allocations: 54)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 5053)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:13:48 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 5293)
+
+
+Started GET "/" for ::1 at 2020-09-15 15:13:52 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 78)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/dogs" for ::1 at 2020-09-15 15:13:59 -0400
+Processing by PetsController#dogs as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): {:species=>"Dog"}. Non-attribute arguments will be disallowed in Rails 6.1. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from dogs at /Users/aysikh/Flatiron/2 - Phase 2/Rails/pet_store/our-pet-store/app/controllers/pets_controller.rb:13)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 852)
+
+
+  
+Arel::Visitors::UnsupportedVisitError (Unsupported argument type: Hash. Construct an Arel node instead.):
+  
+app/controllers/pets_controller.rb:13:in `dogs'
+Started GET "/dogs" for ::1 at 2020-09-15 15:14:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#dogs as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): {:species=>"Dog"}. Non-attribute arguments will be disallowed in Rails 6.1. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from dogs at /Users/aysikh/Flatiron/2 - Phase 2/Rails/pet_store/our-pet-store/app/controllers/pets_controller.rb:13)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1130)
+
+
+  
+Arel::Visitors::UnsupportedVisitError (Unsupported argument type: Hash. Construct an Arel node instead.):
+  
+app/controllers/pets_controller.rb:13:in `dogs'
+Started GET "/dogs" for ::1 at 2020-09-15 15:15:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#dogs as HTML
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ? LIMIT ?[0m  [["species", "Dog"], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:13:in `dogs'
+Completed 406 Not Acceptable in 12ms (ActiveRecord: 1.0ms | Allocations: 7704)
+
+
+  
+ActionController::MissingExactTemplate (PetsController#dogs is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/dogs" for ::1 at 2020-09-15 15:20:10 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#dogs as HTML
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ? LIMIT ?[0m  [["species", "Dog"], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:13:in `dogs'
+  Rendering pets/dogs.html.erb within layouts/application
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2529)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms | Allocations: 9519)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Pet:0x00007fcfdacb7b70>):
+    1: <ul>
+    2: 
+    3: <% @dogs.each do |dog| %>
+    4:   <li><%= link_to dog.name, dog_path %></li>
+    5: <% end %>
+    6: 
+  
+app/views/pets/dogs.html.erb:3
+Started GET "/dogs" for ::1 at 2020-09-15 15:21:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 300.3ms | Allocations: 153240)
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 0.9ms | Allocations: 154732)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dog_path' for #<#<Class:0x00007fcfdaced040>:0x00007fcfdf2d6fe8>
+Did you mean?  dogs_path):
+    1: <ul>
+    2: 
+    3: <% @dogs.each do |dog| %>
+    4:   <li><%= link_to dog.name, dog_path %></li>
+    5: <% end %>
+    6: 
+    7: </ul>
+  
+app/views/pets/dogs.html.erb:4
+app/views/pets/dogs.html.erb:3
+Started GET "/dogs" for ::1 at 2020-09-15 15:21:20 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 2.6ms | Allocations: 940)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.2ms | Allocations: 6250)
+
+
+Started GET "/dogs" for ::1 at 2020-09-15 15:21:26 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 1.4ms | Allocations: 804)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 5186)
+
+
+Started GET "/dogs" for ::1 at 2020-09-15 15:21:28 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 2.7ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 5178)
+
+
+Started GET "/dogs" for ::1 at 2020-09-15 15:21:28 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 3.0ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 5181)
+
+
+Started GET "/dogs" for ::1 at 2020-09-15 15:21:29 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 1.7ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 5181)
+
+
+Started GET "/dogs" for ::1 at 2020-09-15 15:21:30 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 1.5ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 5177)
+
+
+Started GET "/dogs" for ::1 at 2020-09-15 15:22:19 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 294.1ms | Allocations: 149219)
+Completed 500 Internal Server Error in 297ms (ActiveRecord: 0.2ms | Allocations: 150429)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pet' for #<#<Class:0x00007fcfdf0fa0a8>:0x00007fcfe101ab18>):
+    1: <ul>
+    2: 
+    3: <% @dogs.each do |dog| %>
+    4:   <li><%= link_to dog.name, pet_path(pet) %></li>
+    5: <% end %>
+    6: 
+    7: </ul>
+  
+app/views/pets/dogs.html.erb:4
+app/views/pets/dogs.html.erb:3
+Started GET "/dogs" for ::1 at 2020-09-15 15:22:54 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 298.7ms | Allocations: 149202)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 0.2ms | Allocations: 150411)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pet' for #<#<Class:0x00007fcfde4d0b60>:0x00007fcfde4d9440>):
+    1: <ul>
+    2: 
+    3: <% @dogs.each do |dog| %>
+    4:   <li><%= link_to pet.name, pet_path(pet) %></li>
+    5: <% end %>
+    6: 
+    7: </ul>
+  
+app/views/pets/dogs.html.erb:4
+app/views/pets/dogs.html.erb:3
+Started GET "/dogs" for ::1 at 2020-09-15 15:23:12 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 270.5ms | Allocations: 149202)
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 0.2ms | Allocations: 150411)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pet' for #<#<Class:0x00007fcfdb3c25f0>:0x00007fcfdb3c9e18>):
+    1: <ul>
+    2: 
+    3: <% @dogs.each do |dog| %>
+    4:   <li><%= link_to pet.name, dogs_path %></li>
+    5: <% end %>
+    6: 
+    7: </ul>
+  
+app/views/pets/dogs.html.erb:4
+app/views/pets/dogs.html.erb:3
+Started GET "/dogs" for ::1 at 2020-09-15 15:23:51 -0400
+Processing by PetsController#dogs as HTML
+  Rendering pets/dogs.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Dog"]]
+  ↳ app/views/pets/dogs.html.erb:3
+  Rendered pets/dogs.html.erb within layouts/application (Duration: 2.9ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.4ms | Allocations: 6269)
+
+
+Started GET "/pets/1" for ::1 at 2020-09-15 15:23:53 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.9ms | Allocations: 193)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 5334)
+
+
+Started GET "/pets/2" for ::1 at 2020-09-15 15:23:55 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 4924)
+
+
+Started GET "/cats" for ::1 at 2020-09-15 15:26:09 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#cats as HTML
+  Rendering pets/cats.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Cat"]]
+  ↳ app/views/pets/cats.html.erb:3
+  Rendered pets/cats.html.erb within layouts/application (Duration: 9.7ms | Allocations: 5215)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 1.4ms | Allocations: 11336)
+
+
+Started GET "/pets/8" for ::1 at 2020-09-15 15:26:10 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.2ms | Allocations: 192)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 5330)
+
+
+Started GET "/pets/7" for ::1 at 2020-09-15 15:26:12 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.3ms | Allocations: 4924)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 15:26:14 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1115)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 5595)
+
+
+Started GET "/birds" for ::1 at 2020-09-15 15:26:15 -0400
+Processing by PetsController#birds as HTML
+  Rendering pets/birds.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."species" = ?[0m  [["species", "Bird"]]
+  ↳ app/views/pets/birds.html.erb:3
+  Rendered pets/birds.html.erb within layouts/application (Duration: 2.1ms | Allocations: 811)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.2ms | Allocations: 5333)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 15:26:17 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.2ms | Allocations: 50)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 4916)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateColumn (20200915162024)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "pets" ADD "image_url" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200915162024"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
