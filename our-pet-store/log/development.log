@@ -1475,3 +1475,1558 @@ Migrating to CreateColumn (20200915162024)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/pets" for ::1 at 2020-09-15 16:30:46 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 60.2ms | Allocations: 6984)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 136ms (Views: 111.3ms | ActiveRecord: 4.1ms | Allocations: 15072)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:30:49 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 13.1ms | Allocations: 212)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 88.5ms | ActiveRecord: 1.0ms | Allocations: 5263)
+
+
+Started GET "/pets/@pets.image_url" for ::1 at 2020-09-15 16:30:50 -0400
+Processing by PetsController#details as 
+  Parameters: {"id"=>"@pets"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1120)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=@pets):
+  
+app/controllers/pets_controller.rb:9:in `details'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:31:58 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1064)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 2820)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+<h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+<h3><%= @pets.display_good_with_kids %></h3>
+<%= link_to("Back to Index Page", pets_path) %>
+<%= <img src= @pets.image_url alt= "Pet Picture"> %>
+):
+1:    
+2:    <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+3:    <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+4:    <h3><%= @pets.display_good_with_kids %></h3>
+5:    <%= link_to("Back to Index Page", pets_path) %>
+6:    <%= <img src= @pets.image_url alt= "Pet Picture"> %>
+  
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:32:46 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.8ms | Allocations: 201)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.2ms | Allocations: 5617)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:32:46 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 54)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 4499)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:33:14 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.9ms | Allocations: 214)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.1ms | Allocations: 5586)
+
+
+Started GET "/pets/alt=" for ::1 at 2020-09-15 16:33:14 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"alt="}
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms | Allocations: 1112)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=alt=):
+  
+app/controllers/pets_controller.rb:9:in `details'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:33:31 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.8ms | Allocations: 210)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.2ms | Allocations: 5582)
+
+
+Started GET "/pets/alt=" for ::1 at 2020-09-15 16:33:31 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"alt="}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1116)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=alt=):
+  
+app/controllers/pets_controller.rb:9:in `details'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:33:59 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.2ms | Allocations: 214)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 30.6ms | ActiveRecord: 0.2ms | Allocations: 5609)
+
+
+Started GET "/pets/alt=" for ::1 at 2020-09-15 16:33:59 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"alt="}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1108)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=alt=):
+  
+app/controllers/pets_controller.rb:9:in `details'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:34:13 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.7ms | Allocations: 217)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.2ms | Allocations: 5585)
+
+
+Started GET "/pets/alt=" for ::1 at 2020-09-15 16:34:13 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"alt="}
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+Completed 404 Not Found in 4ms (ActiveRecord: 1.2ms | Allocations: 1116)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=alt=):
+  
+app/controllers/pets_controller.rb:9:in `details'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:37:00 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.0ms | Allocations: 200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 32.3ms | ActiveRecord: 0.7ms | Allocations: 5576)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 16:37:25 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1092)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 27.4ms | ActiveRecord: 0.2ms | Allocations: 5163)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:37:26 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.2ms | Allocations: 50)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.2ms | Allocations: 4498)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:38:17 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1061)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms | Allocations: 2768)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+<h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+<h3><%= @pets.display_good_with_kids %></h3>
+<%= link_to("Back to Index Page", pets_path) %>
+<%= <img src="http://power.itp.ac.cn/~jmyang/funny/fun4.jpg" > %>
+):
+1:    
+2:    <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+3:    <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+4:    <h3><%= @pets.display_good_with_kids %></h3>
+5:    <%= link_to("Back to Index Page", pets_path) %>
+6:    <%= <img src="http://power.itp.ac.cn/~jmyang/funny/fun4.jpg" > %>
+  
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected '<'
+app/views/pets/details.html.erb:6: syntax error, unexpected ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:38:37 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.0ms | Allocations: 200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.2ms | Allocations: 5570)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:39:51 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 4.6ms | Allocations: 200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 64.3ms | ActiveRecord: 0.8ms | Allocations: 5567)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:41:18 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1098)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 2810)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    3: <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+    4: <h3><%= @pets.display_good_with_kids %></h3>
+    5: <%= link_to("Back to Index Page", pets_path) %>
+    6: <%= image_tag(@pets.image_url) %>
+  
+app/views/pets/details.html.erb:6
+Started GET "/pets/9" for ::1 at 2020-09-15 16:41:32 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 48.6ms | Allocations: 4000)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.5ms | Allocations: 5734)
+
+
+  
+ActionView::Template::Error (The asset "@pets.image_url" is not present in the asset pipeline.
+):
+    3: <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+    4: <h3><%= @pets.display_good_with_kids %></h3>
+    5: <%= link_to("Back to Index Page", pets_path) %>
+    6: <%= image_tag("@pets.image_url") %>
+  
+app/views/pets/details.html.erb:6
+Started GET "/pets/9" for ::1 at 2020-09-15 16:42:26 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1565)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 3282)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+<h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+<h3><%= @pets.display_good_with_kids %></h3>
+<%= link_to("Back to Index Page", pets_path) %>
+<%= image_tag(data:image/jpeg;base64,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) %>
+):
+1:    
+2:    <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+3:    <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+4:    <h3><%= @pets.display_good_with_kids %></h3>
+5:    <%= link_to("Back to Index Page", pets_path) %>
+6:    <%= image_tag(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QEhAPERAPDw4PEA8PDw8PDw8ODw0PFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OFxAQFy0dHR0tLS0tKy0tLS0tLS0tLS0tLS0tKy0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rLf/AABEIALcBFAMBEQACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAACAwEEBQYAB//EAD4QAAIBAwICBwMKBQQDAQAAAAABAgMEESExBRIGEyJBUWFxgZGhBxQyQlJyscHR8BVTgrLhIzNiomOS8Rb/xAAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG/8QANhEBAQACAQMCBAMFBwUBAAAAAAECEQMEEiExQQUTIlFhcaEVUpHR4QYkMkKBscEWI0NiohT/2gAMAwEAAhEDEQA/APjSEEyQjJjHUcJNWIwQAaFmwC5Ik0REYhG8gAiQ8xgIwkAkQeAJwATgA8ASAeAIAIGEAHgCAD2NcCtN9B6N8qpLyR8x11tzr2eDHWMG79Rk+b2GM4rZ4dupo+PHIJY0CcGe9sMsJWNc3MZVOfHodvHMtaT2TFad4saG+PEzyyVJxUnk6LPGmEvnYnFZXgY/Ksa/MiJxD5VP5sfOoHtvDG0IyG8MqEicitFskk1yzYBok00REcGIwgBoQQ0IIGEgHgAkgCQDwBOADwBAB4AgYQAQAMoYyskZ3UVhN1tQsIySeh5uXUZS6elj0+Nm2vw2DgsZwcXPrK7dPHO3wC7znX39xGDol2y6tTDOrHHwigqVMmnHix5Mgdc13nRMdubK6OpV5GmmPc1beWULQMVNC0e3zSLPQecY5aCNVm9RwnmaJKZClm0YBqx2EaEScGkI0YACRIeaABwMJwATgAkAnABOADwB7AB4AgAgYQwAQA6dNt6E5ZSeqscbb4dDYZS1PI55LfD1+C2Tytwm1s9DDt23ti5Roqa1e/cRcdCZKF/whLLTwb4chXyyXBp4OnDyw5Lou401OjGObK7OoVy7Ge21aaozqllYJD5lOOD0XArzmBFpjA8lbLQGSZts9QDYpbCD2CTGhKeaEEpCNLQAOAJIwlIAnABOAD2ACcAHsAEAEAEMYQACwB1CsomWeHc1485ivU+Io5M+nrsx6mGK/I+RY0+dK8uKyWzwK8G1TmgnxebWG8i+Qr5sepy5tTXDHTLky2q198HTJ4ctqzTt8LJFqtNPhtVZwLINR0PAz2p8knWyek84psYeQAQALAGUXqAbFs9BAbQqcHElSWhBKQBLQjDgCTgYTgAnAB4AkA8AeAPAA4APMAFoYCwAWACARzMWoewubF2w+6vRqPIrjNLxzu3QcN+ict8V1zzCrpamsrKw+NbC1FrY7tGWs1nKCzQl23qF1ojK4rlfI8HovOQ0MIAGwiTTDUiEoRT3RRNizYgfJCNMCVDwIPJABNCMLQE8kMG0qEpaJZ9yHIm5yNOx4XF/7nNn7KaXvNMcZ7scuW+zbteF0sf7ME/Nc7fvyaSY/ZlbnfduWPRSFTWVGlGOM6wipP0xqcfP1OHG7On6Xk5Lvdipx75P49W52jk6kVl0ZS5lUjjaDeql5N6+RxcXXbz1n6PQ5Oj7cd4+a+fI9BwPYAIAIYALABYwBgAgAsAGQwAQb3Cp5Ry8s1XZw3cNrU9RY1WSLijmOhrgwzUbC5cZYfcXnjtGGWq2I3hn2tO5wfKdLlRKIAooj6RORprIWIpCLJrWLALk0TTegSozAgmKACwIwtASYNprG/cVCyvhtWcdn+XcaOZu2NprHOi0001BUx27KwpUYpdiLfjhZMc933dXHqezC6d0uKJ0Z2bqSopPrIUG41FPHZcsauK0fg9U/OOPj456/qvkz5PbxPwdPwSpX6qj1yXX9VHrcLC6z6y8jl5Onx7tx1cXPlcdZPl/T/hfze7lJRcadxFV4aYjzNtTS/qTf9SOvj3MZK5OXXddOdLZoaABYBDQADGASAAYALGAyAFNgTd4HFtHNzOvgXq0Hn2GeNaZTyGi+6Wxr+TH81a/tIrtpLzNMb7MspryqwuEkFhyxz+C9skSQSkryLhG0BZHDaq0Ih1VZqlpWEgDSkiaaICqjUSEpAB4EYGgJNKLfaW2ceppjGWd86dJw1cy89FhFIdLa26fI9mnkVXG7bQ1RGTbB0NlDbQwyjoxp1/GMFBvC5p8vtw2l8DLlzuOG1Ya24v5WaEZ2dGrpz0riKi+/knCSlH3xg/6SOm5e7O4/gnmk1LHyZI7nM80AC0ACxgDAAkALYwFgAyAESAnS9FcPQ5OodnTNW8SjJGfH5jXk8VWu4Z2NsKxzjE4lVlFYeTfGOfJhuRozeRmbzQBWqI0iRUWFCxJaGS1OaNYhesJDDY7hGGJNOGxRJiSADwIy6rwm/BDhU/h8Vyr/Jq576teybhKPg3jVbAcdjwuSl2fd35BUdNYWj08DPKtcY6K2t8YMbW8c98pXFYW9ouZc051Ixpr/nHtJ+WMbkcmFzmoVy0+e9OOkHX0LW2ynNcte45cpRqcjjGH/abx90y6Xp7x55ZX8izylmo43B2snsAAtDAGAA0ALkALYwByAAlIAROQE2Oj94oSWTLl47lPDfg5JjfLW4neKTTXiRxcFnqvm5ZfRftcTimTZqnLuOe6RVEso3wYcjmXM1ZGU2RRDMEqVqyNMU0NLcdJc7jJanVWppE1YsXqUTcp7CoQkScOiJQ8CAkhBUu5PMYL62/fnwKxhZNbh9vUS2Xk8bGm2Ott+ysZyWsX45/MVzhzB0nCqDWE1hrGGLuipi7K0ziMseTMM8pG2MbVCSaIavjnyv8AEJzvY0dVToUoSisbznq5fgvYb4zwxyvlwyQyTgAhoAFoAW0AAxguQAmYAiQyAwIqYBFObTLxJsUpNx3Oq4Tt2nfk6y4k4Plex5/Jht0ceejOL0Y1I83eZ8dsumnJjLNuWlHDZ0OfQ6TJyKHkKIrIvFNJhuVSXqexlVxVrovFNTaPUsnQ22sQDzRJmwJUZgQEhBQqVE6ifcti4iup4HdJJRxzZ2FkUjsLK5isfRedH37LVZObLJrI37WUXrgz3a0jTo1kljzDW6e9LNG5xpnYe76F3OF+VexjWjSuYLNWlmE8fWovLy/uy/uZ14T6WGWU2+ZRQ1JwAQ0AA0AA0AAxgqQAqSAEyiMgNACpoCJe5WJNezfZPQx84I91K5lhs8/KeWkR8+aWMkdsXMqpzlllEGkxVC1EzWXWRWJVVRolfosxyVCLlFYCl271NEuisdUAMmiaY4EqNwIEXtTlj5scKsynLUpLcsa/LgjI46axvMJeCzp6tHPli0jpuG8QbWHuEg211eYS+IrBsz57lF4cf3Z5ZsLjnEMSjDRrd52ej0OzHHUcnJla4PjdgqNVqKfVTXWUvuv6ufJ5XuIymq34eTvx8+qgS2QwAGgAJIAXJDBUkAKkgIuQAuQwTUAiJFYk1LB6HpcXnFF9VK+Wp5/JNZNMVRkLBkaKmkKktRZlVxFVDhVTe5qldt2Z5KgblCxFVqe5ql0PDXoAW6iFQmmiVGpEmo8WWi9w8SrOgu8tLUsqmSbC227aTxgzsV3NKzuppqL0aa8v3sLtHc6GhcvZjmCbmtU6+Pbt5m+OLmzyUOPUouPWLSSxr3NYL0nbH4nR623z9eg3Uj48jxzry+1/STl5x/IcWXbya+7mTJ3oYALQADAFyQwVMATICLkALkME1AIiSHCaHDmen0/ozyK4hHU4ueayaYqMoGK9lYGhEGAPhIiw4bLYhSnUWprELNqycjhtwtCMfVVUVubIb3C5bAGnUQqEU0SZyQlM/jK7MPvfkGJUm0oKS8y2VumhaWL3Sz6Am5baVs3lcuqW68GGk92mzTodYlJ5TWNQmKbnWnZ0saPXbA5E205yw/JbdxSKO4knTedu/TZlFizOGVFlJ6qXNGSzo09MP2MnH1Pl8SWOTr0XCUoPeEpRfnh4yZad+N3NwtoSgtAASQAqSGC5ICJkgBUhgqQAqYEVJDgWbB6nf01Z5HX8e8z6rHWWzxZ82jkWQ0MikAEmKhYhLQiwyKpWINtmGQi1WWhlPVVZ8tzaIbHCpbDDbmgAIEGfFCUTfUOeEorfdeqAMexr4/QtllHScKu1Fr1wxxhWjRuIucnhayZUTlLWlQqrDS9nr+8ipaWqNTYC0K4lhrwY9kzuk1SpSpdbTba0VSPdJePqg7l4SXwzuE3PbxnTEJrzzo/wHIzzvjyHpFTSrcy2qQhP24w/w+Jnn6unpbvjn4Mxoh0haGANACpIAVIATICKkMFSAFyAipIIFnhkMzSO7pf8UZ5+jX4vY4hnyOzrOH6NxGGXlyzbzg8dsKMQCsgA4oVBsSaYKo4BW71DIRektDH3Uzqq1NsUNLhUtig6JbIACK1JpnREYkiTYnFbN05dZH6Enqvsyf5MqVNg7SvsWzuLSp1HhtPbVjZ9rRsL3K13DZZY6alKs35d2gaRdnUqr0T1xn2gzs8tLqVVg6UtpLHoBy68uK+aztriFGe30Yy7pQ1x+PwKni6XnJnhco0eITVW3o1Vuks/dnqviviTyT0pdNbjnlhWQZu8LQEBoDLkAKkBEzAETGCpACpARchwLnCPpo7ul8ZRnn6O4ubTnpew9nOTLHTll1Xz7iVo4TZ89zcfZlY7JdwNKGhkbPQA2mKgxIimXUKgDSeo6TRjsY31XFGutTTFNWeGy1LJ1FHWKAB7yaZ8RGLAjeqU1KLi9U1hiDmZQlTk4PufvXczSIq7SqNrRtaewabFixuuXCfjr5AWU26C2rqS31X7/MqRhl48GU6z5l5/DAVOm5ZVdvYxWFVjiHCY3Sw9JrKhJbp+JULC2XThLGtWjz2k0sUo1YN6pqUJJr2fSx6EZ+Pp+zqxwxys5J7oIbBYAEgBcgBUwBEwCvNjBMmBFtgAMrElzh2kk/M7uGaRk+jcMfNTXoethfDky9XMdJLDVvBxdZw7m23Fk5qnHGnmeRXQyUANgxUHwZFOAqocFJjuWTRpS0McouKtyi8CqbGXaLS6uzeYgBSQqDYEmMShIQUuJWaqLK0nH6L8fJjlFjFt6uNH6NeBaLDpvDz4jJo8OuJLv/yOIzkac6+Hzd2NC6xkbnA7lSWf2g0nK6rpLa5UE3359xFpySPnfF5OnxC7jhKNenCrTfnyRy17qqDku7t0cE1x9v2IM2oWBgYAuQAmbAipxe+H7hhUmwBEmBAYB5GnHN0quWmjR6OEZ13fAa3Zwd+Ho584XxqmmmVyY7xLC+XI1LfVng8uGsrHZL4cyYmZTFQekTTDUYQUhFktU6hNhl1XkJAi2faRROr4bLQAfMVBkCTGIxIRokAYnF7PDdWOEvrpvGviVKVjNjXTX70LSfb3LTQCxfnfdn96svfhl2eXadCujVadLralR0+eWadPl101WW/EmWquEp861SDUalOpSb2VSLjn07g3tF49MPppRSuLKqt5UasJP7u397DNXBNSs3mM2yHIDBJgCpSANno5wR3Ek2uyOTZWu9j0Sp8n0VsadqNvnfTHgXUNzisLv8CbNHtyLJNGACYo6OGeU1bonpYzwzrqeB18I6eP0ZZRfvpZRvrwzjCnBZZ5fPxfW6cb4cZGlJ7I8tqvWXDak3hLTvfciM8pj6urpuj5eov0Tx921DgVPHanLPlg57zX2j3MPgfHr687sE+AU/5kvch/Ov2K/A+L9+l//n6X8yfuQ/n37F+xeL9+/on+AUv5k8+kRfPv2P8AYnFr/Hf0RPgEO6pL2pD+ffsjL4Jh7cl/gUuAY16zPpEr5/4Mb8Fs/wDJ+jQtafIt0/gP50+zP9kZe2c/gKVwh/N/Bnfhtl13/omNz5E/M/A/2b/7fo87z/j8Q7xfh+v836G20q1TPJSylu84S9pU3WHJ0+HH/iyTGo8Zk4ReItLLbxLYevuw7N3WG6zr2zqVHvldy2SDvxnu3w+H9Rn/AJdfmXDglVxUeeEI5zpHLb82ReaOzD4JzX/FlIcuB04azqSeO5YiT86+zpx+C8WE3yZ2/o6noTYWuJTjBc0XmVxUbfUww+zTb2ljDb0+kb4263Xj9Tjx/M7eGePT7210HEuPZ/0aXYhBJKUVHmeNsZWi0XuRjny+dYvc6D4Ph2b555vt9v6/7EW/SSvFYlPrFneUY5+Gnw7iZzZN8vgfT2+LYyuL8tzKM58ylFza5cJdtptbeQfOqf2DwW778v0/kpfwyn9qf/X9BfOo/YPB+/l+n8kPhVP7c/dFj+bSvwDi9s7+hcuER7qj/wDVfqHzvwR/0/j7cl/h/Uv+Cr+bp3rk/wAj+d+Cb/Z6+3L/APP9XYcB4pb26UXCbx3xUfzZpjz4+7DP+z/N/lzxv8Z/N01HpVaPRynD71OT/DJpOfC+7lz+B9ZPSS/lZ/zpm8fjaXMHFVacsrbmSfuZXfjfdy5fD+qw9eK/w3/s+brodUlVcUmoZ0fkPHjuXo5M94XWU1XU2XQKmo5ccvB0Y9PPdn8xxnSzhKt5pJYy8Gs45j6Du2yqR2YTwmtfhlTDNcUVs1pdk6IzY86uGzn5Md1pHMWMXKSWWkt9cHzuWWo9Lp+Gcmcl9HR0pqKSWiOS7t8vqeK44Y6x9DOuFprOXZNSs/1CRnyctnhEaw7E48vg6UyHRcvBUajZWmE5N0UJ6irTG7ug1I51Wj/Ec/FGePd5x8ES8GU5rLPGT3JjzQbO4a8z0TJZWUEGU3Nxdt7iXKo8zSjTVLlTxFr6zx4t5ed/cPLO+yen6Lhy+rOby/QdGMYrRJfiZ22+r0uHh4+OawxkHzrIL3NpnUEq5KV9UXKysZ5cfVZzsu2xwu/6q3VBYVJRhJ6vM6j7Tz7Xj0ijTkz/AMrl+G9Jjj/eM/8ASFO6zrnfV+LMXrzOerzuAPviXci2qZJ+cAfc8q4j7hdeB973zgB3wSqgfcZGT/bBWzY5BUi3RrThrGUovxTaKxzyx8y6HJwcfJNZ4yz8Ztu2HSirHs1IqpH7SxGfw0Z28XX5Y+M5t4HV/wBnOHk3eG9l+3rP5xxvyhVVUcKkU+XO+NvXwPQw6jDkn018z1Pw7qOlv/dx8feeZ/H+bk6bO3CuOtCynhmsqbGrKtodGN8M7GXWlqY53yqMLh0sJvzPms3sdJdTbUhUykZWPUw5NyHQmRY6sM9F1Xsu+THGfJbqT3pNWpjTwkipN+XPnn2/T+MXFPQz15ehOT6AZx6sfqz32Tz7vU5a+oUYZbv5mU56vyFY1wz+qw3lUtH/APCfRtccc5qq9aMoY7466lSyuTlxz4rL6x6LUs40fwY/QSzPfb4oY1OV4ega2nHO4Zavgca4XFpjzjdbvFpV5dvTrC0eXKVJZ3Gyyky9Vm5eKKxpmol7oyDH1bc97eCa+/8AxVelXHcWHHzXRqrC02nKlVhaXOXyNVhaX817r/cg0PnRKq517lr7MBoTkuU3A0Ln4419gXEuLnizCq2/LCJ06ceS2n21ZOSi3u8e1hYvj5JctWtaNPGz28SXbIap+K/MZlyS3/D8AFeclh82HF7p7Y8PMJdeibjMpq+Yx77gMJZlSxCW/I/oP08D0en+IZY+M/M+/u+d674Bx57y6f6b9vb+n+zHVKdOXLKLjJdz/LxPY4+XHObxu3yXPwcnDncOTHVi428a5XqdOOfhzWKFV6kXLybFtH2V6s+fy9Xp8N+lo0nsZ16HFfQ2nLJFjowy3TXvnwRPs3vnKX7KN8+0maYejg6u/XtbtZZROcdXT5biKksywKeg5Mu7kkE3q/LCBVurfwepy3Cnhlq2nqoTp0Tk0fTqJrX0IsdWHJLjqq1e0a7cPVx/QuZ+1cnL0lx+vi/gRUqppZ8cen7wXI5eTlmWM39wVU4+afeEu0cky49X1gqcwqsMkqYaOZDjIVjXHI68q/6UV/5F/bIWM+pfVZ/9ifn/AMVRUjRwzI2MydNsc3o1A0MeSihPXH7wKxeOe7pDniLffp79g15Lv1haH5xhY8cfox9qP/0XGa+51CokvF6foTl6t+HPHHH8VqlX38WibHZhzRFGpitCHdBcz85MNfTtnjn/AHnDD93z/q6SnU7DkZvbl8bMt55QlzzBVYJ6/wCBixnVKmJKOXp466gxyuro+nW9oKmRy5W05RUsPTKNOPly47vGufqul4upw7eSf6+8/J0v8Htr23fJHlnHTbWnPGmH3o9Xp+qt8vhfiPw/PpOTtvmX0rnV0FlLD6xrPdozpvUPP7X/2Q==) %>
+  
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:42:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1097)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.8ms | Allocations: 3350)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+<h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+<h3><%= @pets.display_good_with_kids %></h3>
+<%= link_to("Back to Index Page", pets_path) %>
+<%= image_tag(data:image/jpeg;base64,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) %>
+):
+1:    
+2:    <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+3:    <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+4:    <h3><%= @pets.display_good_with_kids %></h3>
+5:    <%= link_to("Back to Index Page", pets_path) %>
+6:    <%= image_tag(data:image/jpeg;base64,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) %>
+  
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ';', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting '.' or &. or :: or '['
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - AAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - Hf
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - dFj
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - cg
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: unknown regexp options - LPY
+app/views/pets/details.html.erb:6: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: numeric literal without digits
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:8: syntax error, unexpected end, expecting ')'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:44:20 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1095)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms | Allocations: 2812)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+<h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+<h3><%= @pets.display_good_with_kids %></h3>
+<%= link_to("Back to Index Page", pets_path) %>
+<%= image_tag(https://www.thesprucepets.com/thmb/2KkhnRL905iGNBGh2I5I-Y9Vp_Q=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ScreenShot2019-10-21at9.04.12AM-94e28f1cb3dd41f98784d805d2b59842.png) %>
+):
+1:    
+2:    <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+3:    <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+4:    <h3><%= @pets.display_good_with_kids %></h3>
+5:    <%= link_to("Back to Index Page", pets_path) %>
+6:    <%= image_tag(https://www.thesprucepets.com/thmb/2KkhnRL905iGNBGh2I5I-Y9Vp_Q=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ScreenShot2019-10-21at9.04.12AM-94e28f1cb3dd41f98784d805d2b59842.png) %>
+  
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected ')', expecting end
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected ')', expecting end
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected ')', expecting end
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected ')', expecting end
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected ')', expecting end
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected ')', expecting end
+Started GET "/pets/9" for ::1 at 2020-09-15 16:44:47 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1071)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 2788)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+<h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+<h3><%= @pets.display_good_with_kids %></h3>
+<%= link_to("Back to Index Page", pets_path) %>
+<%=img src=(https://www.thesprucepets.com/thmb/2KkhnRL905iGNBGh2I5I-Y9Vp_Q=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ScreenShot2019-10-21at9.04.12AM-94e28f1cb3dd41f98784d805d2b59842.png) %>
+):
+1:    
+2:    <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+3:    <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+4:    <h3><%= @pets.display_good_with_kids %></h3>
+5:    <%= link_to("Back to Index Page", pets_path) %>
+6:    <%=img src=(https://www.thesprucepets.com/thmb/2KkhnRL905iGNBGh2I5I-Y9Vp_Q=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ScreenShot2019-10-21at9.04.12AM-94e28f1cb3dd41f98784d805d2b59842.png) %>
+  
+app/views/pets/details.html.erb:6: syntax error, unexpected tLABEL
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected tLABEL
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected tLABEL
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected tLABEL
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected tLABEL
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+app/views/pets/details.html.erb:6: syntax error, unexpected tLABEL
+app/views/pets/details.html.erb:6: unknown regexp options - www
+app/views/pets/details.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/pets/details.html.erb:6: dynamic constant assignment
+app/views/pets/details.html.erb:6: unknown regexp options - fltr
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected ':', expecting ')'
+app/views/pets/details.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/details.html.erb:6: no .<digit> floating literal anymore; put 0 before dot
+app/views/pets/details.html.erb:6: unexpected fraction part after numeric literal
+Started GET "/pets/9" for ::1 at 2020-09-15 16:45:24 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 190.5ms | Allocations: 75361)
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.2ms | Allocations: 77079)
+
+
+  
+ActionView::Template::Error (undefined method `img' for #<#<Class:0x00007fd4324f8ec8>:0x00007fd432a67990>):
+    3: <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+    4: <h3><%= @pets.display_good_with_kids %></h3>
+    5: <%= link_to("Back to Index Page", pets_path) %>
+    6: <%=img src="https://www.thesprucepets.com/thmb/2KkhnRL905iGNBGh2I5I-Y9Vp_Q=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ScreenShot2019-10-21at9.04.12AM-94e28f1cb3dd41f98784d805d2b59842.png" %>
+  
+app/views/pets/details.html.erb:6
+Started GET "/pets/9" for ::1 at 2020-09-15 16:47:45 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 4.3ms | Allocations: 229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 116ms (Views: 91.3ms | ActiveRecord: 0.4ms | Allocations: 5615)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:47:48 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.2ms | Allocations: 4516)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:48:21 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.8ms | Allocations: 221)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.2ms | Allocations: 5590)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:48:25 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.2ms | Allocations: 4520)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:48:28 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 64)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.1ms | Allocations: 4514)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:49:30 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1108)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms | Allocations: 2818)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    3: <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+    4: <h3><%= @pets.display_good_with_kids %></h3>
+    5: <%= link_to("Back to Index Page", pets_path) %>
+    6: <td><%= image_tag(@pets.image_url) %></td>
+  
+app/views/pets/details.html.erb:6
+Started GET "/pets/9" for ::1 at 2020-09-15 16:50:25 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 4.2ms | Allocations: 227)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 41.7ms | ActiveRecord: 0.4ms | Allocations: 5596)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:50:26 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 4519)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:50:30 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 64)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.2ms | Allocations: 4511)
+
+
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/pets/9" for ::1 at 2020-09-15 16:52:04 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 2.6ms | Allocations: 393)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 40.4ms | ActiveRecord: 1.2ms | Allocations: 15054)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:52:08 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.7ms | Allocations: 70)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 24.4ms | ActiveRecord: 0.4ms | Allocations: 4535)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:52:12 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.6ms | Allocations: 65)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.3ms | Allocations: 4530)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:52:38 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 24.4ms | Allocations: 3398)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.3ms | Allocations: 5125)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    3: <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+    4: <h3><%= @pets.display_good_with_kids %></h3>
+    5: <%= link_to("Back to Index Page", pets_path) %>
+    6: <td><%= image_tag(@pets.image_url) %></td>
+  
+app/views/pets/details.html.erb:6
+Started GET "/pets/9" for ::1 at 2020-09-15 16:53:25 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.0ms | Allocations: 227)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.3ms | Allocations: 5667)
+
+
+Started GET "/pets" for ::1 at 2020-09-15 16:53:28 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1126)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.3ms | Allocations: 5197)
+
+
+Started GET "/pets/6" for ::1 at 2020-09-15 16:53:29 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.2ms | Allocations: 66)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 22.8ms | ActiveRecord: 0.2ms | Allocations: 4532)
+
+
+Started GET "/pets/9" for ::1 at 2020-09-15 16:53:31 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.3ms | Allocations: 64)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.4ms | Allocations: 4514)
+
+
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPet Destroy (1.7ms)[0m  [1m[31mDELETE FROM "pets"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (1.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pluto"], ["species", "Dog"], ["year_of_birth", 2020], ["good_with_kids", 1], ["created_at", "2020-09-15 20:57:21.346813"], ["updated_at", "2020-09-15 20:57:21.346813"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Nugget"], ["species", "Dog"], ["year_of_birth", 2019], ["good_with_kids", 1], ["created_at", "2020-09-15 20:57:21.352815"], ["updated_at", "2020-09-15 20:57:21.352815"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Max"], ["species", "Dog"], ["year_of_birth", 2020], ["good_with_kids", 0], ["created_at", "2020-09-15 20:57:21.366330"], ["updated_at", "2020-09-15 20:57:21.366330"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Spot"], ["species", "Dog"], ["year_of_birth", 2018], ["good_with_kids", 0], ["created_at", "2020-09-15 20:57:21.374414"], ["updated_at", "2020-09-15 20:57:21.374414"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Barkley"], ["species", "Dog"], ["year_of_birth", 2017], ["good_with_kids", 1], ["created_at", "2020-09-15 20:57:21.386943"], ["updated_at", "2020-09-15 20:57:21.386943"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Whiskers"], ["species", "Cat"], ["year_of_birth", 2019], ["good_with_kids", 0], ["created_at", "2020-09-15 20:57:21.394418"], ["updated_at", "2020-09-15 20:57:21.394418"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Penny"], ["species", "Cat"], ["year_of_birth", 2015], ["good_with_kids", 0], ["created_at", "2020-09-15 20:57:21.402930"], ["updated_at", "2020-09-15 20:57:21.402930"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Franklin"], ["species", "Cat"], ["year_of_birth", 2018], ["good_with_kids", 1], ["created_at", "2020-09-15 20:57:21.410525"], ["updated_at", "2020-09-15 20:57:21.410525"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPet Create (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("name", "species", "year_of_birth", "good_with_kids", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Polly"], ["species", "Bird"], ["year_of_birth", 2010], ["good_with_kids", 1], ["created_at", "2020-09-15 20:57:21.417684"], ["updated_at", "2020-09-15 20:57:21.417684"], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-pet-birds-parakeet-1572839068.jpg"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/pets/9" for ::1 at 2020-09-15 16:57:41 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+Completed 404 Not Found in 31ms (ActiveRecord: 2.5ms | Allocations: 2772)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=9):
+  
+app/controllers/pets_controller.rb:9:in `details'
+Started GET "/pets/9" for ::1 at 2020-09-15 16:58:06 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1162)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=9):
+  
+app/controllers/pets_controller.rb:9:in `details'
+Started GET "/routes" for ::1 at 2020-09-15 16:58:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/pets" for ::1 at 2020-09-15 16:58:16 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:2
+  Rendered pets/index.html.erb within layouts/application (Duration: 60.7ms | Allocations: 6181)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 122ms (Views: 120.3ms | ActiveRecord: 0.7ms | Allocations: 13130)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 16:58:18 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.1ms | Allocations: 249)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.3ms | Allocations: 4840)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 17:00:34 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (12.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 5.8ms | Allocations: 244)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 155ms (Views: 83.2ms | ActiveRecord: 12.3ms | Allocations: 5630)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 17:00:56 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1069)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms | Allocations: 2781)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+<h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+<h3><%= @pets.display_good_with_kids %></h3>
+<%= link_to("Back to Index Page", pets_path)\n %>
+<td> <%= image_tag("#{@pets.image_url}", height: 42, width: 42)%></td>
+):
+1:    
+2:    <h3><%= "#{@pets.name} the #{@pets.species}" %></h3>
+3:    <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
+4:    <h3><%= @pets.display_good_with_kids %></h3>
+5:    <%= link_to("Back to Index Page", pets_path)\n %>
+6:    <td> <%= image_tag("#{@pets.image_url}", height: 42, width: 42)%></td>
+  
+app/views/pets/details.html.erb:5: syntax error, unexpected backslash, expecting ')'
+app/views/pets/details.html.erb:5: syntax error, unexpected backslash, expecting ')'
+app/views/pets/details.html.erb:5: syntax error, unexpected backslash, expecting ')'
+app/views/pets/details.html.erb:5: syntax error, unexpected backslash, expecting ')'
+app/views/pets/details.html.erb:5: syntax error, unexpected backslash, expecting ')'
+app/views/pets/details.html.erb:5: syntax error, unexpected backslash, expecting ')'
+Started GET "/pets/18" for ::1 at 2020-09-15 17:01:09 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.1ms | Allocations: 255)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.2ms | Allocations: 5654)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 17:01:11 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 4539)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 17:01:52 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 4.9ms | Allocations: 247)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.2ms | Allocations: 5611)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 17:02:33 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 2.4ms | Allocations: 250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 19.2ms | ActiveRecord: 0.2ms | Allocations: 5621)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 17:02:47 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 1.1ms | Allocations: 250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.2ms | Allocations: 5616)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 17:02:56 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 2.2ms | Allocations: 250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 36.4ms | ActiveRecord: 0.2ms | Allocations: 5624)
+
+
+Started GET "/pets/18" for ::1 at 2020-09-15 17:03:33 -0400
+Processing by PetsController#details as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:9:in `details'
+  Rendering pets/details.html.erb within layouts/application
+  Rendered pets/details.html.erb within layouts/application (Duration: 0.6ms | Allocations: 256)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 37.5ms | ActiveRecord: 0.2ms | Allocations: 5633)
+
+

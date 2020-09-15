@@ -3,3 +3,6 @@
 <h3>Age: <%= DateTime.now.year - @pets.year_of_birth %></h3>
 <h3><%= @pets.display_good_with_kids %></h3>
 <%= link_to("Back to Index Page", pets_path) %>
+<br>
+<br>
+<td> <%= image_tag("#{@pets.image_url}", height: "30%", width: "30%")%></td>
